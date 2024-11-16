@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>NG Support</title>
+
+    {% load static %}
+
+    <!-- All Plugins Css -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}" />
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    <!-- Custom Color Option -->
+    <link href="{% static 'css/colors.css' %}" rel="stylesheet" />
+
+    <!-- Load jQuery and other scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Other JS files -->
+    <script src="{% static 'js/counterup.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/daterangepicker.js' %}"></script>
+    <script src="{% static 'js/dropzone.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/lightbox.js' %}"></script>
+    <script src="{% static 'js/map_infobox.js' %}"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+    <script src="{% static 'js/markerclusterer.js' %}"></script>
+    <script src="{% static 'js/moment.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/rangeslider.js' %}"></script>
+    <script src="{% static 'js/select2.min.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/slider-bg.js' %}"></script>
+
+    <style>
+      .sub-menu {
+        display: none; 
+        position: absolute;
+        background-color: white; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0; 
+        z-index: 1000;
+      }
+      .sub-menu li {
+        white-space: nowrap;
+      }
+      
+      .sub-menu a {
+        display: block;
+        padding: 8px 15px; 
+        color: #333; 
+        text-decoration: none;
+      }
+      
+      .sub-menu a:hover {
+        background-color: #f0f0f0; 
+      }
+
+      .sub-menu {
+        display: none;
+        position: absolute;
+        background-color: #333; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        padding: 10px 0; 
+        z-index: 1000;
+      }
+      
+      .nav-menu li:hover .sub-menu {
+        display: block; 
+      }
+      
+      .sub-menu li {
+        white-space: nowrap; 
+      }
+      
+      .sub-menu a {
+        display: block;
+        padding: 8px 15px; 
+        color: white; 
+        text-decoration: none;
+      }
+      
+      .sub-menu a:hover {
+        background-color: #444; 
+      }
+
+      .modal-content {
+        padding: 20px;
+      }
+      
+      .modal-header-title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      .application-form .form-group {
+        margin-bottom: 15px;
+      }
+      
+      .application-form .btn {
+        width: 100%;
+        background-color: #28a745; 
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+      }
+      .alert-container {
+        margin-top: 20px;
+      }
+      
+      .alert {
+        padding: 10px;
+        border-radius: 5px;
+      }
+      
+      .alert-success {
+        background-color: #28a745;
+        color: white;
+      }
+      
+      .alert-danger {
+        background-color: #dc3545;
+        color: white;
+      }
+      
+      h3 {
+        font-family: Arial, sans-serif;
+        font-size: 28px;
+        color: #2c3e50;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body class="red-skin">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div id="preloader">
+      <div class="preloader">
+        <span></span><span></span>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+      <!-- ============================================================== -->
+      <!-- Top header -->
+      <!-- ============================================================== -->
+      <!-- Start Navigation -->
+      <div class="header header-dark">
+        <div class="container">
+          <nav id="navigation" class="navigation navigation-landscape">
+            <div class="nav-header">
+              <a class="nav-brand" href="#"><img src="{% static 'img/logo.png' %}" class="logo" alt="Logo" style="width: 400px !important; height: auto !important;" /></a>
+
+              <div class="nav-toggle"></div>
+            </div>
+            <div class="nav-menus-wrapper" style="transition-property: none;">
+              <ul class="nav-menu">
+                <li>
+                  <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                  <a href="{% url 'all_categories' %}">Explore</a>
+                </li>
+                <li>
+                  <a href="{% url 'services' %}">Services</a>
+                </li>
+
+                <li>
+                  <a href="javascript:void(0);">Our City</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="{% url 'important_contacts' %}">Important Contacts</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Who_is_who' %}">Whos Who</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="active">
+                  <a href="{% url 'job_list' %}">Jobs</a>
+                </li>
+                <li>
+                  <a href="{% url 'house_rent_list' %}">House Rent</a>
+                </li>
+                <li>
+                  <a href="{% url 'about_us' %}">About Us</a>
+                </li>
+                <li>
+                  <a href="{% url 'contact' %}">Contact Us</a>
+                </li>
+              </ul>
+
+              <ul class="nav-menu nav-menu-social align-to-right">
+                <li>
+                  <a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span></a>
+                </li>
+                <li class="add-listing bg-whit">
+                  <a href="{% url 'business_ad' %}"><i class="fas fa-plus-circle"></i> Boost Your Business</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- End Navigation -->
+      <div class="clearfix"></div>
+      <!-- ============================================================== -->
+      <!-- Top header -->
+      <!-- ============================================================== -->
+
+      <!-- =========== List In Grid View =================== -->
+      <section class="gray">
+        <div class="container">
+          <h3>Career Starts Here!</h3>
+          <br />
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="shorting-wrap">
+                <h5 class="shorting-title">507 Results</h5>
+                <div class="shorting-right">
+                  <label>Short By:</label>
+                  <div class="dropdown show">
+                    <a class="btn btn-filter dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection">Most Rated</span></a>
+                    <div class="drp-select dropdown-menu">
+                      <a class="dropdown-item" href="JavaScript:Void(0);">Most Rated</a>
+                      <a class="dropdown-item" href="JavaScript:Void(0);">Most Viewd</a>
+                      <a class="dropdown-item" href="JavaScript:Void(0);">News Listings</a>
+                      <a class="dropdown-item" href="JavaScript:Void(0);">High Rated</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- job_list.html -->
+
+          <div class="row">
+            {% for job in jobs %}
+              <!-- Single Job Listing Grid -->
+              <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="Reveal-grid-wrapper">
+                  <!-- Job Content -->
+                  <div class="Reveal-grid-caption">
+                    <div class="Reveal-grid-caption-header">
+                      <h3 class="Reveal-header-title"><a href="{% url 'job_detail' job.id %}">{{ job.title }}</a></h3>
+                      <h6>
+                        {% if job.salary == 0 %}
+                          Salary: Not disclosed
+                        {% else %}
+                          ₹{{ job.salary }}
+                        {% endif %}
+                      </h6>
+                    </div>
+                    <div class="Reveal-grid-caption-body">
+                      <ul class="Reveal-contact-list">
+                        <li>
+                          <img src="{% static 'img/company.png' %}" alt="" />{{ job.company }}
+                        </li>
+                        <li>
+                          <img src="{% static 'img/pin.png' %}" alt="" />{{ job.location }}
+                        </li>
+                        <li>
+                          <img src="{% static 'img/contact_email.png' %}" alt="" />{{ job.contact_email }}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Footer with Apply Now Button -->
+                  <div class="Reveal-grid-footer">
+                    <div class="Reveal-grid-footer-last">
+                      <!-- Apply Now Button that triggers the modal -->
+                      <a href="#" data-toggle="modal" data-target="#applyModal" class="Reveal-view-btn">Apply Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% empty %}
+              <div class="col-12">
+                <p>No job listings available.</p>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 mt-3">
+              <div class="text-center">
+                <div class="spinner-grow text-danger" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-warning" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-success" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========== End All List In Grid View =================== -->
+
+      <!-- Job Application Modal -->
+      <div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <!-- Close button -->
+            <span class="mod-close" data-dismiss="modal"><i class="ti-close"></i></span>
+
+            <div class="modal-body">
+              <h4 class="modal-header-title">Apply for Job</h4>
+
+              <div class="application-form">
+                <!-- Job application form -->
+                <form method="POST" enctype="multipart/form-data" action="{% url 'apply' %}">
+                  {% csrf_token %}
+
+                  <!-- Resume Upload -->
+                  <div class="form-group">
+                    <label for="resume">Upload Resume</label>
+                    <div class="input-with-icon gray">
+                      <input type="file" class="form-control" name="resume" required />
+                      <i class="ti-file"></i>
+                    </div>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-with-icon gray">
+                      <input type="email" class="form-control" name="email" placeholder="Email Address" required />
+                      <i class="ti-email"></i>
+                    </div>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <div class="input-with-icon gray">
+                      <input type="text" class="form-control" name="phone_number" placeholder="Phone Number" required />
+                      <i class="ti-mobile"></i>
+                    </div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-md full-width pop-login">Submit Application</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
+
+      <!-- ============================ Call To Action Start ================================== -->
+      <section class="call-to-act" style="background: #e4074e url(static/img/landing-bg.png) no-repeat">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-8">
+              <div class="clt-caption text-center mb-4">
+                <h3>Subscribe Now!</h3>
+                <p>Simple pricing plans. Unlimited web maintenance service</p>
+              </div>
+              <div class="inner-flexible-box subscribe-box">
+                <div class="input-group">
+                  <input type="text" class="form-control large" placeholder="Enter your mail here" />
+                  <button class="btn btn-subscribe" type="button"><i class="fa fa-arrow-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================ Call To Action End ================================== -->
+
+      <!-- ============================ Footer Start ================================== -->
+      <footer class="dark-footer skin-dark-footer">
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6">
+                <div class="footer-widget">
+                  <img src="{% static 'img/logo.png' %}" class="img-fluid f-logo" alt="" />
+                  <p>Gudiyattam</p>
+                  <ul class="footer-bottom-social">
+                    <li>
+                      <a href="https://www.facebook.com/share/hKExbaz4gVX28moB/?mibextid=kFxxJD"><i class="ti-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/ngsupport.23?igsh=eWx4OXhwdGs4cGx2"><i class="ti-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-linkedin"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4">
+                <div class="footer-widget">
+                  <h4 class="widget-title">Our Information</h4>
+                  <ul class="footer-menu">
+                    <li>
+                      <a href="{% url 'about_us' %}">About Us</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                    <li>
+                      <a href="login.html">Login</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'important_contacts' %}">Important Contacts</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-4">
+                <div class="footer-widget">
+                  <h4 class="widget-title">Services</h4>
+                  <ul class="footer-menu">
+                    <li>
+                      <a href="{% url 'services_list' title='Electrician' %}">Electrician</a>
+                    </li>
+                    <li>
+                      <a href="stays.html">AC Mechanic</a>
+                    </li>
+                    <li>
+                      <a href="adventures.html">Planner</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'services_list' title='Carpenter' %}">Carpenter</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-4">
+                <div class="footer-widget">
+                  <h4 class="widget-title">Useful links</h4>
+                  <ul class="footer-menu">
+                    <li>
+                      <a href="{% url 'house_rent_list' %}">House Rent</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'job_list' %}">Jobs</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'all_categories' %}">Categories</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'blog' %}">Blog</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-12 col-md-12 text-center">
+                <p class="mb-0">
+                  © 2024 NG Support. Designd By <a href="https://jenctechnologies.com/">Jenc Technologies</a> All Rights Reserved
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- ============================ Footer End ================================== -->
+
+      <!-- Log In Modal -->
+      <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal">
+        <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+          <div class="modal-content" id="registermodal">
+            <span class="mod-close" data-dismiss="modal"><i class="ti-close"></i></span>
+            <div class="modal-body">
+              <h4 class="modal-header-title">Log <span class="theme-cl">In</span></h4>
+              <div class="login-form">
+                <form>
+                  <div class="form-group">
+                    <label>User Name</label>
+                    <div class="input-with-icon gray">
+                      <input type="text" class="form-control" placeholder="Username" />
+                      <i class="ti-user"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Password</label>
+                    <div class="input-with-icon gray">
+                      <input type="password" class="form-control" placeholder="*******" />
+                      <i class="ti-unlock"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-md full-width pop-login">Login</button>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-divider">
+                <span>Or login via</span>
+              </div>
+              <div class="social-login mb-3">
+                <ul>
+                  <li>
+                    <a href="#" class="btn fb"><i class="ti-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn google"><i class="ti-google"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn twitter"><i class="ti-twitter"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="modat-foot">
+                <div class="md-left">
+                  Have't Account?
+                  <a href="register.html" class="theme-cl">Sign Up</a>
+                </div>
+                <div class="md-right">
+                  <a href="#" class="theme-cl">Forget Password?</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
+      <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+  </body>
+</html>

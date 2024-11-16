@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./NG_Support_Web"
+    ]
+}

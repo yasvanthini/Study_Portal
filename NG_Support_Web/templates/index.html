@@ -1,0 +1,857 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">	
+<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+        <title>NG Support</title>
+		
+        <!-- All Plugins Css -->
+        <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+		
+        <!-- Custom CSS -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+		
+		<!-- Custom Color Option -->
+		<link href="{% static 'css/colors.css' %}" rel="stylesheet">
+
+		 <!-- Load jQuery -->
+		 <script src="{% static 'js/jquery.min.js' %}"></script>
+		 <script src="{% static 'js/popper.min.js' %}"></script>
+		 <script src="{% static 'js/bootstrap.min.js' %}"></script>
+		 
+		 <!-- Other JS files -->
+		 <script src="{% static 'js/counterup.min.js' %}"></script>
+		 <script src="{% static 'js/custom.js' %}"></script>
+		 <script src="{% static 'js/daterangepicker.js' %}"></script>
+		 <script src="{% static 'js/dropzone.js' %}"></script>
+		 <script src="{% static 'js/imagesloaded.js' %}"></script>
+		 <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+		 <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+		 <script src="{% static 'js/lightbox.js' %}"></script>
+		 <script src="{% static 'js/map_infobox.js' %}"></script>
+		 <script src="{% static 'js/map.js' %}"></script>
+		 <script src="{% static 'js/markerclusterer.js' %}"></script>
+		 <script src="{% static 'js/moment.min.js' %}"></script>
+		 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+		 <script src="{% static 'js/rangeslider.js' %}"></script>
+		 <script src="{% static 'js/select2.min.js' %}"></script>
+		 <script src="{% static 'js/slick.js' %}"></script>
+		 <script src="{% static 'js/slider-bg.js' %}"></script>
+
+		 <style>
+			.sub-menu {
+    		display: none; 
+    		position: absolute;
+    		background-color: white; 
+    		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    		padding: 10px 0; 
+    		z-index: 1000;
+			}
+			.sub-menu li {
+    		white-space: nowrap; 
+			}
+
+			.sub-menu a {
+    		display: block;
+   			padding: 8px 15px; 
+    		color: #333; 
+    		text-decoration: none;
+			}
+
+			.sub-menu a:hover {
+    		background-color: #f0f0f0; 
+			}
+
+			.sub-menu {
+    		display: none;
+    		position: absolute;
+    		background-color: #333; 
+   			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    		padding: 10px 0; 
+    		z-index: 1000;
+			}
+
+			.nav-menu li:hover .sub-menu {
+    		display: block; 
+				}
+
+			.sub-menu li {
+    		white-space: nowrap; 
+			}
+
+			.sub-menu a {
+    		display: block;
+   			padding: 8px 15px; 
+    		color: white; 
+    		text-decoration: none;
+			}
+
+			.sub-menu a:hover {
+    		background-color: #444; 
+			}
+		 </style>
+		
+    </head>
+	
+    <body class="red-skin">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+		
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+		
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+           <!-- Start Navigation -->
+<div class="header header-dark">
+    <div class="container">
+        <nav id="navigation" class="navigation navigation-landscape">
+            <div class="nav-header">
+                <a class="nav-brand" href="#">
+    				<img src="{% static 'img/logo.png' %}" class="logo" alt="Logo" style="width: 400px !important; height: auto !important;" />
+				</a>
+
+                <div class="nav-toggle"></div>
+            </div>
+            <div class="nav-menus-wrapper" style="transition-property: none;">
+                <ul class="nav-menu">
+                    <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'all_categories' %}">Explore</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    
+					<li>
+        				<a href="javascript:void(0);">Our City</a>
+        				<ul class="sub-menu">
+            				<li><a href="{% url 'important_contacts' %}">Important Contacts</a></li>
+            				<li><a href="{% url 'Who_is_who' %}">Whos Who</a></li>
+        				</ul>
+   					 </li>
+					<li><a href="{% url 'job_list' %}">Jobs</a></li>
+					<li><a href="{% url 'house_rent_list' %}">House Rent</a></li>
+					<li><a href="{% url 'about_us' %}">About Us</a></li>
+					<li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+				
+                <ul class="nav-menu nav-menu-social align-to-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#login">
+                            <i class="fa fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span>
+                        </a>
+                    </li>
+                    <li class="add-listing bg-whit">
+                        <a href="{% url "business_ad" %}">
+                            <i class="fas fa-plus-circle"></i> Boost Your Business
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- End Navigation -->
+	<div class="clearfix"></div>
+	<!-- ============================================================== -->
+			<!-- Top header  -->
+			<!-- ============================================================== -->
+			
+	<!-- ============================ Hero Banner Start ================================= -->
+<div class="image-cover hero-banner" style="background:url(static/img/banner-2.jpg) no-repeat;" data-overlay="6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h1 class="big-header-capt capti">Discover Your City</h1>
+                <div class="full-search-2 Reveal-search Reveal-search-radius box-style">
+                    <div class="Reveal-search-content">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <input type="text" name="keywords" class="form-control" placeholder="Keywords..." value="{{ request.POST.keywords }}">
+                                </div>
+                                <div class="col-lg-3">
+                                    <select name="category" class="form-control">
+                                        <option value="" selected>Select Category</option>
+                                        {% for category in categories %}
+                                            <option value="{{ category.name }}" {% if category.name == request.POST.category %}selected{% endif %}>
+                                                {{ category.name }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+								<div class="col-lg-3 col-md-3 col-sm-12 br-left-p">
+									<div class="form-group">
+										<div class="input-with-icon">
+											<select class="form-control" placeholder="Location...">
+												<option value="" disabled selected>Select Location...</option>
+												<option value="location1">Gudiyattam</option>
+												<option value="location2">Vellore</option>
+												<option value="location3">Ambur</option>
+												<option value="location4">Pernambet</option>
+												<option value="location4">Katpadi</option>
+												<!-- Add more locations as needed -->
+											</select>
+											<i class="theme-cl ti-target"></i>
+										</div>
+									</div>
+								</div>
+								
+                                <div class="col-lg-2">
+                                    <button type="submit" class="btn search-btn">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+<!-- ============================ Search Results ============================= -->
+{% if request.method == 'POST' %}
+<section class="search-results">
+    <div class="container">
+        <h5>Search Results</h5>
+        {% if results %}
+            <ul class="result-list">
+                {% for category in results %}
+                    <li>
+                        <a href="grid-with-sidebar.html">{{ category.name }}</a>
+                        <i class="{{ category.icon }}"></i>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+<!-- ============================ Search Results End ========================= -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================ Hero Banner End ================================== -->
+
+
+
+<!-- ============================ Category Start ================================== -->
+<section class="half light gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Categories</h2>
+                <div class="owl-carousel owl-theme" id="categorie-slide">
+                    {% for category in categories %}
+                    <div class="Reveal-cats-box">
+                        <a href="grid-with-sidebar.html" class="Reveal-category-box">
+                            <div class="category-desc">
+                                <div class="category-icon">
+                                    <i class="{{ category.icon }}"></i>
+                                </div>
+                                <div class="Reveal-category-detail category-desc-text">
+                                    <h4>{{ category.name }}</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% empty %}
+                    <div class="Reveal-cats-box">
+                        <p>No categories found.</p>
+                    </div>
+                    {% endfor %}
+                </div>
+               <Br></Br>
+				<!-- Row -->
+					<div class="row">
+						<div class="col-lg-12 col-md-12 text-center">
+							<a href="{% url 'all_categories' %}" id="explore-all" class="btn btn-light btn-md rounded">Explore All</a>
+						</div>
+					</div>
+					<!-- Row -->
+				
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================ Category End ================================== -->
+
+
+			
+			<!-- ============================ Listings Start ================================== -->
+			<section>
+				<div class="container">
+					
+					<!-- Row -->
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<div class="sec-heading center">
+								<h3>Top Rated <span class="theme-cl">Places</span></h3>
+							</div>
+						</div>
+					</div>
+					<!-- Row -->
+					
+					<!-- Row -->
+					<div class="row">
+						
+						<!-- Single Listing Grid -->
+						<div class="col-lg-4 col-md-6 col-sm-12">
+							<div class="Reveal-grid-wrapper">
+								<div class="Reveal-grid-thumb">
+									<div class="Reveal-listing-price-info"> 
+									</div>
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>
+									<div class="lup-category"><a href="search-with-sidebar.html">House Rental</a></div>
+									<a href="listing-detail.html" class="lup-box"><img src="{% static "img/2bhk.jpg" %}" class="img-fluid" alt="" /></a>
+								</div>
+								<div class="Reveal-grid-caption">
+									<div class="Reveal-grid-caption-header">
+										<h4 class="Reveal-header-title"><a href="listing-detail.html">Rental House / 2BHK</a></h4>
+										<div class="Reveal-grid-reviews">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="overall-reviews">(42 Reviews)</span>
+										</div>
+									</div>
+									<div class="Reveal-grid-caption-body">
+										<ul class="Reveal-contact-list">
+											<li><img src="static/img/add.svg" class="" alt="" />2024 Gudiyattam, Vellore</li>
+											<li><img src="static/img/call.svg" class="" alt="" />91567875467</li>
+										</ul>
+									</div>
+								</div>
+								<div class="Reveal-grid-footer">	
+									<div class="Reveal-grid-footer-last">
+										<a href="listing-detail.html" class="Reveal-view-btn">View</a>	
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Single Listing Grid -->
+						<div class="col-lg-4 col-md-6 col-sm-12">
+							<div class="Reveal-grid-wrapper">
+								<div class="Reveal-grid-thumb">
+									<div class="Reveal-listing-price-info"> 
+									</div>
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>
+									<div class="lup-category"><a href="{% url 'service_detail' id=1 %}">Event Management</a></div>
+									<a href="{% url 'service_detail' id=1 %}" class="lup-box"><img src="{% static "img/RJ_Events.jpeg" %}" class="img-fluid" alt="" /></a>
+								</div>
+								<div class="Reveal-grid-caption">
+									<div class="Reveal-grid-caption-header">
+										<h4 class="Reveal-header-title"><a href="{% url 'service_detail' id=1 %}">RJ Events</a></h4>
+										<div class="Reveal-grid-reviews">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="overall-reviews">(42 Reviews)</span>
+										</div>
+									</div>
+									<div class="Reveal-grid-caption-body">
+										<ul class="Reveal-contact-list">
+											<li><img src="static/img/add.svg" class="" alt="" />No: 7/11, RTO Office Road, Vinayakapuram, Gudiyattam</li>
+											<li><img src="static/img/call.svg" class="" alt="" />9940281156</li>
+										</ul>
+									</div>
+								</div>
+								<div class="Reveal-grid-footer">	
+									<div class="Reveal-grid-footer-last">
+										<a href="{% url 'service_detail' id=1 %}" class="Reveal-view-btn">View</a>	
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Single Listing Grid -->
+						<div class="col-lg-4 col-md-6 col-sm-12">
+							<div class="Reveal-grid-wrapper">
+								<div class="Reveal-grid-thumb">
+									<div class="Reveal-listing-price-info"> 
+									</div>
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>
+									<div class="lup-category"><a href="search-with-sidebar.html">Massage</a></div>
+									<a href="listing-detail.html" class="lup-box"><img src="static/img/l-9.jpg" class="img-fluid" alt="" /></a>
+								</div>
+								<div class="Reveal-grid-caption">
+									<div class="Reveal-grid-caption-header">
+										<h4 class="Reveal-header-title"><a href="listing-detail.html">Shruthi Spa & Massage</a></h4>
+										<div class="Reveal-grid-reviews">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="overall-reviews">(42 Reviews)</span>
+										</div>
+									</div>
+									<div class="Reveal-grid-caption-body">
+										<ul class="Reveal-contact-list">
+											<li><img src="static/img/add.svg" class="" alt="" />Katpadi, Vellore</li>
+											<li><img src="static/img/call.svg" class="" alt="" />9167546787</li>
+										</ul>
+									</div>
+								</div>
+								<div class="Reveal-grid-footer">
+									<div class="Reveal-grid-footer-last">
+										<a href="listing-detail.html" class="Reveal-view-btn">View</a>	
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Single Listing Grid -->
+						<div class="col-lg-4 col-md-6 col-sm-12">
+							<div class="Reveal-grid-wrapper">
+								<div class="Reveal-grid-thumb">
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>
+									<div class="lup-category"><a href="search-with-sidebar.html">Food</a></div>
+									<a href="listing-detail.html" class="lup-box"><img src="static/img/l-4.jpg" class="img-fluid" alt="" /></a>
+								</div>
+								<div class="Reveal-grid-caption">
+									<div class="Reveal-grid-caption-header">
+										<h4 class="Reveal-header-title"><a href="listing-detail.html">Pizza House</a></h4>
+										<div class="Reveal-grid-reviews">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="overall-reviews">(42 Reviews)</span>
+										</div>
+									</div>
+									<div class="Reveal-grid-caption-body">
+										<ul class="Reveal-contact-list">
+											<li><img src="static/img/add.svg" class="" alt="" />Pallikonda, Vellore</li>
+											<li><img src="static/img/call.svg" class="" alt="" />9178654567</li>
+										</ul>
+									</div>
+								</div>
+								<div class="Reveal-grid-footer">
+									<div class="Reveal-grid-footer-last">
+										<a href="listing-detail.html" class="Reveal-view-btn">View</a>	
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Single Listing Grid -->
+						<div class="col-lg-4 col-md-6 col-sm-12">
+							<div class="Reveal-grid-wrapper">
+								<div class="Reveal-grid-thumb">
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>
+									<div class="lup-category"><a href="search-with-sidebar.html">Life Style</a></div>
+									<a href="listing-detail.html" class="lup-box"><img src="static/img/l-5.jpg" class="img-fluid" alt="" /></a>
+								</div>
+								<div class="Reveal-grid-caption">
+									<div class="Reveal-grid-caption-header">
+										<h4 class="Reveal-header-title"><a href="listing-detail.html">Blue Rare Night Bar</a></h4>
+										<div class="Reveal-grid-reviews">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="overall-reviews">(42 Reviews)</span>
+										</div>
+									</div>
+									<div class="Reveal-grid-caption-body">
+										<ul class="Reveal-contact-list">
+											<li><img src="static/img/add.svg" class="" alt="" />Pernambet, Vellore</li>
+											<li><img src="static/img/call.svg" class="" alt="" />9154854849</li>
+										</ul>
+									</div>
+								</div>
+								<div class="Reveal-grid-footer">
+									<div class="Reveal-grid-footer-last">
+										<a href="listing-detail.html" class="Reveal-view-btn">View</a>	
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Single Listing Grid -->
+						<div class="col-lg-4 col-md-6 col-sm-12">
+							<div class="Reveal-grid-wrapper">
+								<div class="Reveal-grid-thumb">
+									<div class="Reveal-listing-price-info"> 
+									</div>
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>
+									<div class="lup-category"><a href="search-with-sidebar.html">Music</a></div>
+									<a href="listing-detail.html" class="lup-box"><img src="static/img/l-6.jpg" class="img-fluid" alt="" /></a>
+								</div>
+								<div class="Reveal-grid-caption">
+									<div class="Reveal-grid-caption-header">
+										<h4 class="Reveal-header-title"><a href="listing-detail.html">Muskan Music & Light Sound</a></h4>
+										<div class="Reveal-grid-reviews">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="overall-reviews">(42 Reviews)</span>
+										</div>
+									</div>
+									<div class="Reveal-grid-caption-body">
+										<ul class="Reveal-contact-list">
+											<li><img src="static/img/add.svg" class="" alt="" />KV Kuppam, Vellore</li>
+											<li><img src="static/img/call.svg" class="" alt="" />9154548549</li>
+										</ul>
+									</div>
+								</div>
+								<div class="Reveal-grid-footer">
+									<div class="Reveal-grid-footer-last">
+										<a href="listing-detail.html" class="Reveal-view-btn">View</a>	
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<!-- Row -->
+					
+				</div>
+			</section>
+			<!-- ============================ Listings End ================================== -->
+			
+			<!-- ============================ Meet Our Team ================================== -->
+			<section class="light-bg">
+				<div class="container">
+					
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<div class="sec-heading center">
+								<h3>Meet Our Team</h3>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<div class="owl-carousel owl-theme" id="reviews-slide">
+							<!-- Single Review -->
+							<div class="item">
+    							<div class="smart-testimonials">
+        							<div class="smart-testi-thumb">
+            							<img src="{% static 'img/r-1.jpg' %}" class="img-fluid" alt="Ragul Kumar" />
+        							</div>
+        							<div class="smart-testimonials-content">
+            							<div class="Reveal-st-author-info">
+                							<h1 class="Reveal-st-author-title" style="font-size: 25px; margin-bottom: 5px; text-align: center;">Ragul Kumar</h1>
+                							<span class="Reveal-st-author-subtitle theme-cl" style="font-size: 20px; color: #888; text-align: center;">CEO & MD</span><br>
+            							</div>
+       								</div>
+    							</div>
+							</div>
+
+								<!-- Single Review -->
+								<div class="item">
+									<div class="smart-testimonials">
+										<div class="smart-testi-thumb">
+											<img src="{% static "img/r-3.jpg" %}" class="img-fluid" alt="" />
+										</div>
+										<div class="smart-testimonials-content">
+											<div class="Reveal-st-author-info">
+                							<h1 class="Reveal-st-author-title" style="font-size: 25px; margin-bottom: 5px; text-align: center;">Chandru Prasad</h1>
+                							<span class="Reveal-st-author-subtitle theme-cl" style="font-size: 20px; color: #888; text-align: center;">Project Manager</span><br>
+            							</div>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Single Review -->
+								<div class="item">
+									<div class="smart-testimonials">
+										<div class="smart-testi-thumb">
+											<img src="{% static "img/r-2.jpg" %}" class="img-fluid" alt="" />
+										</div>
+										<div class="smart-testimonials-content">
+											<div class="Reveal-st-author-info">
+                							<h1 class="Reveal-st-author-title" style="font-size: 25px; margin-bottom: 5px; text-align: center;">Yasvanthini</h1>
+                							<span class="Reveal-st-author-subtitle theme-cl" style="font-size: 20px; color: #888; text-align: center;">Frontend Developer</span><br>
+            							</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			<!-- ============================ Meet Our Team ================================== -->
+			
+			<!-- ================================= Blog Grid ================================== -->
+			<section>
+				<div class="container">
+				
+					<div class="row">
+						<div class="col text-center">
+							<div class="sec-heading center">
+								<h2>News & Blog</h2>
+								<h3>Updates From <span class="theme-cl">NG Support</span></h3>
+							</div>
+						</div>
+					</div>
+					
+						<div class="row" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- Single blog Grid -->
+    <div class="col-lg-4 col-md-4 col-sm-12" style="display: flex; flex-direction: column; height: 100%;">
+        <div class="Reveal-blog-wrap-grid" style="display: flex; flex-direction: column; height: 100%;">
+
+            <div class="Reveal-blog-thumb" style="flex: 1;">
+                <a href="blog-detail.html">
+                    <img src="{% static 'img/digital-marketing.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: auto;" />
+                </a>
+            </div>
+            <br>
+            <div class="Reveal-blog-body" style="flex: 1;">
+                <h4 class="bl-title"><a href="blog-detail.html" style="text-decoration: none; color: #333;">The Importance of a Strong Online Presence for Small Businesses</a></h4>
+                <p style="font-size: 14px; line-height: 1.5; color: #555;">A strong online presence is essential for small businesses to compete and grow in today’s digital world. A professional website, active social media, and effective SEO help build credibility, attract new customers, and increase sales. Investing in your online visibility is a powerful way to reach more people and establish your brand.</p>
+            </div>
+
+            <div class="blog-cates" style="margin-top: 15px;">
+                <ul style="list-style: none; padding: 0; display: flex;">
+                    <li style="margin-right: 10px;"><a href="#" class="blog-cates-list style-4" style="text-decoration: none; color: #1abc9c;">Digital Marketing</a></li>
+                    <li><a href="#" class="blog-cates-list style-3" style="text-decoration: none; color: #3498db;">Business Growth</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Single blog Grid -->
+    <div class="col-lg-4 col-md-4 col-sm-12" style="display: flex; flex-direction: column; height: 100%;">
+        <div class="Reveal-blog-wrap-grid" style="display: flex; flex-direction: column; height: 100%;">
+
+            <div class="Reveal-blog-thumb" style="flex: 1;">
+                <a href="blog-detail.html">
+                    <img src="{% static 'img/industry-events.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: auto;" />
+                </a>
+            </div>
+            <br>
+            <div class="Reveal-blog-body" style="flex: 1;">
+                <h4 class="bl-title"><a href="blog-detail.html" style="text-decoration: none; color: #333;">Why You Need Professional Event Management for Your Next Big Event</a></h4>
+                <p style="font-size: 14px; line-height: 1.5; color: #555;">Event management is key to a successful event, ensuring everything runs smoothly. A professional planner handles the details with expertise and creativity, bringing your vision to life.</p>
+            </div>
+            <div class="blog-cates" style="margin-top: 15px;">
+                <ul style="list-style: none; padding: 0; display: flex;">
+                    <li style="margin-right: 10px;"><a href="#" class="blog-cates-list style-1" style="text-decoration: none; color: #1abc9c;">Event Planning</a></li>
+                    <li><a href="#" class="blog-cates-list style-5" style="text-decoration: none; color: #f39c12;">Business Services</a></li>
+                </ul>
+            </div>
+       
+        </div>
+    </div>
+
+    <!-- Single blog Grid -->
+    <div class="col-lg-4 col-md-4 col-sm-12" style="display: flex; flex-direction: column; height: 100%;">
+        <div class="Reveal-blog-wrap-grid" style="display: flex; flex-direction: column; height: 100%;">
+
+            <div class="Reveal-blog-thumb" style="flex: 1;">
+                <a href="blog-detail.html">
+                    <img src="{% static 'img/events.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: auto;" />
+                </a>
+            </div>
+            <br>
+            <div class="Reveal-blog-body" style="flex: 1;">
+                <h4 class="bl-title"><a href="blog-detail.html" style="text-decoration: none; color: #333;">How to Make Your Event Photos Stand Out in Gudiyattam</a></h4>
+                <p style="font-size: 14px; line-height: 1.5; color: #555;">Capturing the perfect event photo goes beyond just pointing and shooting. Learn the techniques that make event photos pop, from strategic angles to capturing those candid moments that tell the full story of your event.</p>
+            </div>
+            <div class="blog-cates" style="margin-top: 15px;">
+                <ul style="list-style: none; padding: 0; display: flex;">
+                    <li style="margin-right: 10px;"><a href="#" class="blog-cates-list style-1" style="text-decoration: none; color: #1abc9c;">Photography</a></li>
+                    <li><a href="#" class="blog-cates-list style-2" style="text-decoration: none; color: #3498db;">Event Management</a></li>
+                </ul>
+            </div>
+			<br>
+        </div>
+    </div>
+</div>
+
+				</div>		
+			</section>
+			<!-- ============================= Blog Grid End ================================ -->
+			
+			<!-- ============================ Call To Action Start ================================== -->
+			<section class="p-0">
+				<div class="container">
+					<div class="row call-wrapios theme-bg">
+						
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="call-wrapios-box">
+								<div class="call-wrapios-box-icon">
+									<img src="static/img/big-24-hours.svg" class="img-fluid" alt="" />
+								</div>
+								<div class="call-wrapios-box-caption">
+									<h5>Make A Call</h5>
+									<h3>+91 532 548 7596</h3>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="call-wrapios-box">
+								<div class="call-wrapios-box-icon">
+									<img src="static/img/big-newsletter.svg" class="img-fluid" alt="" />
+								</div>
+								<div class="call-wrapios-box-caption">
+									<h5>Subscribe Now!</h5>
+									<div class="inner-flexible-box subscribe-box">
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="Enter your mail here">
+											<button class="btn btn-subscribe" type="button"><i class="fa fa-arrow-right"></i></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			<!-- ============================ Call To Action End ================================== -->
+			
+			<!-- ============================ Footer Start ================================== -->
+			<footer class="dark-footer skin-dark-footer">
+				<div class="ht-80"></div>
+				<div>
+					<div class="container">
+						<div class="row">
+							
+							<div class="col-lg-4 col-md-6">
+								<div class="footer-widget">
+									<img src="{% static 'img/logo.png' %}" class="img-fluid f-logo" alt="" />
+									<p>Gudiyattam</p>
+									<ul class="footer-bottom-social">
+										<li><a href="https://www.facebook.com/share/hKExbaz4gVX28moB/?mibextid=kFxxJD"><i class="ti-facebook"></i></a></li>
+										<li><a href="https://www.instagram.com/ngsupport.23?igsh=eWx4OXhwdGs4cGx2"><i class="ti-instagram"></i></a></li>
+										<li><a href="#"><i class="ti-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div>		
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Our Information</h4>
+									<ul class="footer-menu">
+										<li><a href="{% url 'about_us' %}">About Us</a></li>
+										<li><a href="{% url 'contact' %}">Contact Us</a></li>
+										<li><a href="login.html">Login</a></li>
+										<li><a href="{% url "important_contacts" %}">Important Contacts</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Services</h4>
+									<ul class="footer-menu">
+										<li><a href="{% url 'services_list' title='Electrician' %}">Electrician</a></li>
+										<li><a href="stays.html">AC Mechanic</a></li>
+										<li><a href="adventures.html">Planner</a></li>
+										<li><a href="{% url 'services_list' title='Carpenter' %}">Carpenter</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Useful links</h4>
+									<ul class="footer-menu">
+										<li><a href="{% url 'house_rent_list' %}">House Rent</a></li>
+										<li><a href="{% url 'job_list' %}">Jobs</a></li>
+										<li><a href="{% url 'all_categories' %}">Categories</a></li>
+										<li><a href="{% url 'blog' %}">Blog</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row align-items-center">
+							
+							<div class="col-lg-12 col-md-12 text-center">
+								<p class="mb-0">© 2024 NG Support. Designd By <a href="https://jenctechnologies.com/">Jenc Technologies</a> All Rights Reserved</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- ============================ Footer End ================================== -->
+			
+			<!-- Log In Modal -->
+			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal">
+				<div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+					<div class="modal-content" id="registermodal">
+						<span class="mod-close" data-dismiss="modal"><i class="ti-close"></i></span>
+						<div class="modal-body">
+							<h4 class="modal-header-title">Log <span class="theme-cl">In</span></h4>
+							<div class="login-form">
+								<form>
+								
+									<div class="form-group">
+										<label>User Name</label>
+										<div class="input-with-icon gray">
+											<input type="text" class="form-control" placeholder="Username">
+											<i class="ti-user"></i>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label>Password</label>
+										<div class="input-with-icon gray">
+											<input type="password" class="form-control" placeholder="*******">
+											<i class="ti-unlock"></i>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<button type="submit" class="btn btn-md full-width pop-login">Login</button>
+									</div>
+								
+								</form>
+							</div>
+							<div class="modal-divider"><span>Or login via</span></div>
+							<div class="social-login mb-3">
+								<ul>
+									<li><a href="#" class="btn fb"><i class="ti-facebook"></i></a></li>
+									<li><a href="#" class="btn google"><i class="ti-google"></i></a></li>
+									<li><a href="#" class="btn twitter"><i class="ti-twitter"></i></a></li>
+								</ul>
+							</div>
+							<div class="modat-foot">
+								<div class="md-left">Have't Account? <a href="register.html" class="theme-cl">Sign Up</a></div>
+								<div class="md-right"><a href="#" class="theme-cl">Forget Password?</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Modal -->
+			
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+			
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		
+
+	</body>
+</html>

@@ -1,0 +1,330 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Call To Action</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- All Plugins Css -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}" />
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    <!-- Custom Color Option -->
+    <link href="{% static 'css/colors.css' %}" rel="stylesheet" />
+
+    <!-- Load jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Other JS files -->
+    <script src="{% static 'js/counterup.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/daterangepicker.js' %}"></script>
+    <script src="{% static 'js/dropzone.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/lightbox.js' %}"></script>
+    <script src="{% static 'js/map_infobox.js' %}"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+    <script src="{% static 'js/markerclusterer.js' %}"></script>
+    <script src="{% static 'js/moment.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/rangeslider.js' %}"></script>
+    <script src="{% static 'js/select2.min.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/slider-bg.js' %}"></script>
+
+    <style>
+      .sub-menu {
+        display: none; 
+        position: absolute;
+        background-color: white; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0; 
+        z-index: 1000;
+      }
+      .sub-menu li {
+        white-space: nowrap; 
+      }
+      
+      .sub-menu a {
+        display: block;
+        padding: 8px 15px;
+        color: #333; 
+        text-decoration: none;
+      }
+      
+      .sub-menu a:hover {
+        background-color: #f0f0f0; 
+      }
+
+      .sub-menu {
+        display: none; 
+        position: absolute;
+        background-color: #333; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        padding: 10px 0; 
+        z-index: 1000;
+      }
+      
+      .nav-menu li:hover .sub-menu {
+        display: block;
+      }
+      
+      .sub-menu li {
+        white-space: nowrap; 
+      }
+      
+      .sub-menu a {
+        display: block;
+        padding: 8px 15px; 
+        color: white; 
+        text-decoration: none;
+      }
+      
+      .sub-menu a:hover {
+        background-color: #444;
+      }
+      
+      .main-container {
+        max-width: 900px; 
+        padding: 50px;
+        background: linear-gradient(120deg, #b2f7ef, #d0e9f7); 
+        border-radius: 15px; 
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); 
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin: 100px auto; 
+      }
+      
+      .main-container:hover {
+        transform: translateY(-5px); 
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2); 
+      }
+      
+      body h1 {
+        color: #2c3e50; 
+        font-size: 40px; 
+        margin-bottom: 20px; 
+        font-weight: bold;
+        text-transform: uppercase; 
+        letter-spacing: 1.5px; 
+      }
+      
+      body p {
+        color: #34495e; 
+        line-height: 1.6; 
+        font-size: 22px; 
+        margin: 10px 0;
+        padding: 10px; 
+        border-radius: 5px; 
+      }
+      footer h1,
+      footer p {
+        color: inherit;
+        line-height: inherit;
+        font-size: inherit;
+        margin: inherit;
+        padding: inherit;
+        border-radius: inherit;
+        letter-spacing: inherit;
+        margin-bottom: inherit;
+      }
+      
+      .contact-number {
+        color: #e74c3c; 
+        font-size: 48px; 
+        font-weight: bold; 
+        margin-top: 20px; 
+        transition: transform 0.3s; 
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
+      }
+      
+      .contact-number:hover {
+        transform: scale(1.1); 
+      }
+      
+      .emoji {
+        font-size: 40px; 
+        margin: 0 10px; 
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Start Navigation -->
+    <div class="header header-dark">
+      <div class="container">
+        <nav id="navigation" class="navigation navigation-landscape">
+          <div class="nav-header">
+            <a class="nav-brand" href="#"><img src="{% static 'img/logo.png' %}" class="logo" alt="Logo" style="width: 400px !important; height: auto !important" /></a>
+
+            <div class="nav-toggle"></div>
+          </div>
+          <div class="nav-menus-wrapper" style="transition-property: none">
+            <ul class="nav-menu">
+              <li>
+                <a href="{% url 'index' %}">Home</a>
+              </li>
+              <li>
+                <a href="{% url 'all_categories' %}">Explore</a>
+              </li>
+              <li>
+                <a href="{% url 'services' %}">Services</a>
+              </li>
+
+              <li>
+                <a href="javascript:void(0);">Our City</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="{% url 'important_contacts' %}">Important Contacts</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'Who_is_who' %}">Whos Who</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="{% url 'job_list' %}">Jobs</a>
+              </li>
+              <li>
+                <a href="{% url 'house_rent_list' %}">House Rent</a>
+              </li>
+              <li>
+                <a href="{% url 'about_us' %}">About Us</a>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}">Contact Us</a>
+              </li>
+            </ul>
+
+            <ul class="nav-header-social align-to-right">
+              <li>
+                <a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span></a>
+              </li>
+              <li class="add-listing bg-whit">
+                <a href="{% url 'business_ad' %}"><i class="fas fa-plus-circle"></i> Boost Your Business</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- End Navigation -->
+
+    <div class="main-container">
+      <h1>Contact Us Today! ☎️</h1>
+      <p>Looking to elevate your business? 📈 We're here to assist you!</p>
+      <p class="contact-number">📞 9176200584</p>
+    </div>
+
+    <!-- ============================ Footer Start ================================== -->
+    <footer class="dark-footer skin-dark-footer">
+      <div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget">
+                <img src="{% static 'img/logo.png' %}" class="img-fluid f-logo" alt="" />
+                <p>Gudiyattam</p>
+                <ul class="footer-bottom-social">
+                  <li>
+                    <a href="https://www.facebook.com/share/hKExbaz4gVX28moB/?mibextid=kFxxJD"><i class="ti-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/ngsupport.23?igsh=eWx4OXhwdGs4cGx2"><i class="ti-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ti-linkedin"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4">
+              <div class="footer-widget">
+                <h4 class="widget-title">Our Information</h4>
+                <ul class="footer-menu">
+                  <li>
+                    <a href="{% url 'about_us' %}">About Us</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="login.html">Login</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'important_contacts' %}">Important Contacts</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+              <div class="footer-widget">
+                <h4 class="widget-title">Services</h4>
+                <ul class="footer-menu">
+                  <li>
+                    <a href="{% url 'services_list' title='Electrician' %}">Electrician</a>
+                  </li>
+                  <li>
+                    <a href="stays.html">AC Mechanic</a>
+                  </li>
+                  <li>
+                    <a href="adventures.html">Planner</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'services_list' title='Carpenter' %}">Carpenter</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+              <div class="footer-widget">
+                <h4 class="widget-title">Useful links</h4>
+                <ul class="footer-menu">
+                  <li>
+                    <a href="{% url 'house_rent_list' %}">House Rent</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'job_list' %}">Jobs</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'all_categories' %}">Categories</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'blog' %}">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12 col-md-12 text-center">
+              <p class="mb-0">
+                © 2024 NG Support. Designd By <a href="https://jenctechnologies.com/">Jenc Technologies</a> All Rights Reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ============================ Footer End ================================== -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

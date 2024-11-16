@@ -1,0 +1,436 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Important Contacts in Gudiyattam</title>
+
+    <!-- All Plugins Css -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}"/>
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+
+    <!-- Custom Color Option -->
+    <link href="{% static 'css/colors.css' %}" rel="stylesheet"/>
+
+    <!-- Load jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Other JS files -->
+    <script src="{% static 'js/counterup.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/daterangepicker.js' %}"></script>
+    <script src="{% static 'js/dropzone.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/lightbox.js' %}"></script>
+    <script src="{% static 'js/map_infobox.js' %}"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+    <script src="{% static 'js/markerclusterer.js' %}"></script>
+    <script src="{% static 'js/moment.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/rangeslider.js' %}"></script>
+    <script src="{% static 'js/select2.min.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/slider-bg.js' %}"></script>
+    <style>
+      body h2 {
+        text-align: center;
+        color: green;
+        margin-top: 50px;
+      }
+      
+      body p {
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+      
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 800px; 
+        margin: 0 auto; 
+        border: 1px solid #007bff;
+        border-radius: 8px; 
+        overflow: hidden; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      }
+      
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      th {
+        background-color: azure;
+        text-transform: uppercase; 
+        font-weight: bold;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      
+      tr:hover {
+        background-color: #e9ecef; 
+      }
+      
+      @media (max-width: 600px) {
+        table {
+          width: 100%; 
+        }
+        th,
+        td {
+          display: block;
+          width: 100%; 
+          box-sizing: border-box; 
+        }
+        th {
+          position: absolute; 
+          top: -9999px; 
+          left: -9999px; 
+        }
+        td {
+          text-align: right; 
+          padding-left: 50%; 
+          position: relative; 
+        }
+        td::before {
+          content: attr(data-label); 
+          position: absolute; 
+          left: 10px; 
+          width: calc(50% - 20px); 
+          text-align: left; 
+          font-weight: bold; 
+        }
+      }
+      .sub-menu {
+        display: none; 
+        position: absolute;
+        background-color: white; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0; 
+        z-index: 1000;
+      }
+      .sub-menu li {
+        white-space: nowrap; 
+      }
+      
+      .sub-menu a {
+        display: block;
+        padding: 8px 15px; 
+        color: #333; 
+        text-decoration: none;
+      }
+      
+      .sub-menu a:hover {
+        background-color: #f0f0f0; 
+      }
+      .sub-menu {
+        display: none; 
+        position: absolute;
+        background-color: #333; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        padding: 10px 0; 
+        z-index: 1000;
+      }
+      
+      .nav-menu li:hover .sub-menu {
+        display: block;
+      }
+      
+      .sub-menu li {
+        white-space: nowrap; 
+      }
+      
+      .sub-menu a {
+        display: block;
+        padding: 8px 15px; 
+        color: white; 
+        text-decoration: none;
+      }
+      
+      .sub-menu a:hover {
+        background-color: #444; 
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Start Navigation -->
+    <div class="header header-dark">
+      <div class="container">
+        <nav id="navigation" class="navigation navigation-landscape">
+          <div class="nav-header">
+            <a class="nav-brand" href="#"><img src="{% static 'img/logo.png' %}" class="logo" alt="Logo" style="width: 400px !important; height: auto !important;" /></a>
+
+            <div class="nav-toggle"></div>
+          </div>
+          <div class="nav-menus-wrapper" style="transition-property: none;">
+            <ul class="nav-menu">
+              <li>
+                <a href="{% url 'index' %}">Home</a>
+              </li>
+              <li>
+                <a href="{% url 'all_categories' %}">Explore</a>
+              </li>
+              <li>
+                <a href="{% url 'services' %}">Services</a>
+              </li>
+
+              <li class="active">
+                <a href="javascript:void(0);">Our City</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="{% url 'important_contacts' %}">Important Contacts</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'Who_is_who' %}">Whos Who</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="{% url 'job_list' %}">Jobs</a>
+              </li>
+              <li>
+                <a href="{% url 'house_rent_list' %}">House Rent</a>
+              </li>
+              <li>
+                <a href="{% url 'about_us' %}">About Us</a>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}">Contact Us</a>
+              </li>
+            </ul>
+
+            <ul class="nav-menu nav-menu-social align-to-right">
+              <li>
+                <a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span></a>
+              </li>
+              <li class="add-listing bg-whit">
+                <a href="{% url 'business_ad' %}"><i class="fas fa-plus-circle"></i> Boost Your Business</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- End Navigation -->
+    <h2>Important Contacts in Gudiyattam</h2>
+    <p>STD Code: 04171</p>
+
+    <table>
+      <tr>
+        <th>Sl.No</th>
+        <th>Office Name</th>
+        <th>Phone No. 04171</th>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">01</td>
+        <td data-label="Office Name">Town Police Station</td>
+        <td data-label="Phone No. 04171">220100</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">02</td>
+        <td data-label="Office Name">Rural Police Station</td>
+        <td data-label="Phone No. 04171">221188</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">03</td>
+        <td data-label="Office Name">Deputy Superintendent of Police</td>
+        <td data-label="Phone No. 04171">221288</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">04</td>
+        <td data-label="Office Name">Women Police Station</td>
+        <td data-label="Phone No. 04171">229100</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">05</td>
+        <td data-label="Office Name">Women’s Help</td>
+        <td data-label="Phone No. 04171">1091</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">06</td>
+        <td data-label="Office Name">Children’s Help</td>
+        <td data-label="Phone No. 04171">1098</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">07</td>
+        <td data-label="Office Name">Fire Station</td>
+        <td data-label="Phone No. 04171">220100</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">08</td>
+        <td data-label="Office Name">Government Hospital</td>
+        <td data-label="Phone No. 04171">221111</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">09</td>
+        <td data-label="Office Name">Chairperson</td>
+        <td data-label="Phone No. 04171">220172</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">10</td>
+        <td data-label="Office Name">Vice-chairperson</td>
+        <td data-label="Phone No. 04171">220569</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">11</td>
+        <td data-label="Office Name">Municipal Commissioner</td>
+        <td data-label="Phone No. 04171">220311</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">12</td>
+        <td data-label="Office Name">Municipal Engineer</td>
+        <td data-label="Phone No. 04171">220138</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">13</td>
+        <td data-label="Office Name">Electricity Board</td>
+        <td data-label="Phone No. 04171">220332/220033</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">14</td>
+        <td data-label="Office Name">Telephone Complaints</td>
+        <td data-label="Phone No. 04171">222198</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">15</td>
+        <td data-label="Office Name">Head Post Office</td>
+        <td data-label="Phone No. 04171">220990</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">16</td>
+        <td data-label="Office Name">Telegraph Service</td>
+        <td data-label="Phone No. 04171">220185/220520</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">17</td>
+        <td data-label="Office Name">Railway Enquiry</td>
+        <td data-label="Phone No. 04171">220210</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">18</td>
+        <td data-label="Office Name">Municipal Office</td>
+        <td data-label="Phone No. 04171">220051</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">19</td>
+        <td data-label="Office Name">Roadways Enquiries</td>
+        <td data-label="Phone No. 04171">220144</td>
+      </tr>
+      <tr>
+        <td data-label="Sl.No">20</td>
+        <td data-label="Office Name">Gas Agency</td>
+        <td data-label="Phone No. 04171">220720/221112</td>
+      </tr>
+    </table>
+    <br /><br /><br />
+    <!-- ============================ Footer Start ================================== -->
+    <footer class="dark-footer skin-dark-footer">
+      <div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget">
+                <img src="{% static 'img/logo.png' %}" class="img-fluid f-logo" alt="" />
+                <p>Gudiyattam</p>
+                <ul class="footer-bottom-social">
+                  <li>
+                    <a href="https://www.facebook.com/share/hKExbaz4gVX28moB/?mibextid=kFxxJD"><i class="ti-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/ngsupport.23?igsh=eWx4OXhwdGs4cGx2"><i class="ti-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ti-linkedin"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4">
+              <div class="footer-widget">
+                <h4 class="widget-title">Our Information</h4>
+                <ul class="footer-menu">
+                  <li>
+                    <a href="{% url 'about_us' %}">About Us</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="login.html">Login</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'important_contacts' %}">Important Contacts</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+              <div class="footer-widget">
+                <h4 class="widget-title">Services</h4>
+                <ul class="footer-menu">
+                  <li>
+                    <a href="{% url 'services_list' title='Electrician' %}">Electrician</a>
+                  </li>
+                  <li>
+                    <a href="stays.html">AC Mechanic</a>
+                  </li>
+                  <li>
+                    <a href="adventures.html">Planner</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'services_list' title='Carpenter' %}">Carpenter</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+              <div class="footer-widget">
+                <h4 class="widget-title">Useful links</h4>
+                <ul class="footer-menu">
+                  <li>
+                    <a href="{% url 'house_rent_list' %}">House Rent</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'job_list' %}">Jobs</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'all_categories' %}">Categories</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'blog' %}">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12 col-md-12 text-center">
+              <p class="mb-0">
+                © 2024 NG Support. Designd By <a href="https://jenctechnologies.com/">Jenc Technologies</a> All Rights Reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ============================ Footer End ================================== -->
+  </body>
+</html>
